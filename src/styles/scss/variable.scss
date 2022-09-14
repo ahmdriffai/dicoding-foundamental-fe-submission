@@ -1,9 +1,15 @@
-$primary: #3D8361;
-$danger: red;
-$box-shadow:
- 12.5px 12.5px 10px rgba(0, 0, 0, 0.035),
-100px 100px 80px rgba(0, 0, 0, 0.07)
-;
+$primary: #6C63FF;
+$danger: #F50057;
+$warning: #F9A826;
+$success: #00BFA6;
+$info: #00B0FF;
 
+// box shadow
+$box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.07);
+
+// form
+$input-btn-focus-color-opacity  : .25;
+$input-btn-border-width         : 0;
+$input-btn-padding-y            : .600rem;
 @import "bootstrap";
 

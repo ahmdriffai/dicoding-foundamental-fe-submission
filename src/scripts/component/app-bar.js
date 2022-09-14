@@ -7,7 +7,7 @@ class AppBar extends HTMLElement {
     this.innerHTML = `
       <nav class="navbar navbar-light bg-white shadow">
         <div class="container">
-          <a class="navbar-brand" href="#">Movie Ku</a>
+          <a class="navbar-brand" href="#">Berita Populer</a>
         </div>
       </nav>
     `;
