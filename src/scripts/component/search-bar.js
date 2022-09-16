@@ -11,6 +11,7 @@ class SearchBar extends HTMLElement{
     get value() {
         return this.querySelector('#searchElement').value;
     }
+
     render() {
         this.innerHTML = `
         <div class="container">
@@ -18,13 +19,17 @@ class SearchBar extends HTMLElement{
                 <div class="col-md-8">
                     <div class="input-group mb-3">
                         <input type="text" class="form-control shadow" id="searchElement" placeholder="Cari berita populer">
-                        <button class="btn btn-primary color-light" type="button" id="button-addon2">Cari</button>
+                        <button class="btn btn-primary color-light" type="button" id="searchButtonElement">Cari</button>
                     </div>
                 </div>
             </div>
         </div>
         `;
+
+        this.querySelector('#searchButtonElement')
+            .addEventListener('click', this._clickEvent);
     }
+
 }
 
 customElements.define('search-bar', SearchBar);

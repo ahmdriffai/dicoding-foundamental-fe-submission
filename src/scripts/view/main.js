@@ -3,22 +3,19 @@ import '../component/search-bar';
 import Datasource from "../data/data-source";
 
 const main = () => {
+  
   const searchElement = document.querySelector('search-bar');
   const newsListElement = document.querySelector('news-list');
 
-  // const displayNews = async () => {
-  //   try {
-  //     const result = await Datasource.listNews();
-  //     renderResult(result);
-  //   } catch (error) {
-  //     fallbackResult(error);
-  //   }
-  // }
-
-  const displayNews = async () => {
+  const searchNews = async () => {
     try {
-      const result = await Datasource.searchNews(searchElement.value)
-      renderResult(result);
+      const result = await Datasource.searchNews(searchElement.value);
+  
+      if (result.length === 0) {
+        fallbackResult('data tidak ditemukan');
+      }else {
+        renderResult(result);
+      }
     } catch (error) {
       fallbackResult(error);
     }
@@ -31,8 +28,8 @@ const main = () => {
   const fallbackResult = message => {
     newsListElement.renderError(message);
   };
-  displayNews();
-  searchElement.clickEvent =  displayNews();
+  
+  searchElement.addEventListener('click', searchNews);
 
 };
 

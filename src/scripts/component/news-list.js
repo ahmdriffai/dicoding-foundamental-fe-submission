@@ -7,11 +7,8 @@ class NewsList extends HTMLElement {
     }
 
     render() {
-        this.innerHTML = `
-            <div class="container">
-                <div class="clas"></div>
-            </div>
-        `;
+        this.innerHTML = '';
+        this.classList.add('container', 'd-flex', 'flex-wrap', 'md-justify-content-center');
         this._listNews.forEach(news => {
             const newsElement = document.createElement('news-item');
             newsElement.news = news;
